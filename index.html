@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArchiCraft - Die open-source Architektursoftware</title>
+    <title>ArchiCraft - Open Source Architektur CAD und BIM Software</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -17,39 +17,36 @@
                             500: '#0066ff',
                             600: '#0052cc',
                             700: '#003d99',
-                        }
+                        },
+                        logoGreen: '#22c55e',
+                        logoRed: '#ef4444',
+                        logoBlue: '#2563eb'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Light Mode Blueprint Grid */
+        /* Light Mode Blueprint Grid (Hellgraue Linien) */
         html.light body {
             background-color: #f8fafc;
             background-image: 
-                linear-gradient(to right, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 102, 255, 0.08) 1px, transparent 1px),
-                linear-gradient(to right, rgba(0, 102, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 102, 255, 0.15) 1px, transparent 1px);
+                linear-gradient(to right, rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+                linear-gradient(to right, rgba(148, 163, 184, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(148, 163, 184, 0.6) 1px, transparent 1px);
             background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
         }
 
-        /* Dark Mode Blueprint Grid */
+        /* Dark Mode Blueprint Grid (Dunkelgraue Linien) */
         html.dark body {
             background-color: #0f172a;
             background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(to right, rgba(0, 102, 255, 0.2) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 102, 255, 0.2) 1px, transparent 1px);
+                linear-gradient(to right, rgba(51, 65, 85, 0.4) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(51, 65, 85, 0.4) 1px, transparent 1px),
+                linear-gradient(to right, rgba(71, 85, 105, 0.6) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(71, 85, 105, 0.6) 1px, transparent 1px);
             background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
-        }
-
-        .tab-btn.active {
-            border-color: #0066ff;
-            color: #0066ff;
-            background-color: rgba(0, 102, 255, 0.08);
         }
     </style>
 </head>
@@ -59,44 +56,39 @@
     <header id="mainHeader" class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 opacity-0 pointer-events-none transition-opacity duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="archicraft.png" alt="ArchiCraft Icon" class="w-10 h-10 rounded-xl shadow-md border border-blue-400/30">
+                <img src="Archicraft_Logo.png" alt="ArchiCraft Icon" class="w-10 h-10 block">
                 <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ArchiCraft</span>
-                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono">0.1.0 Alpha</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono">ArchiCraft 0.1.0 Alpha</span>
             </div>
 
             <div class="flex items-center space-x-4">
-                <a href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors inline-flex items-center space-x-2">
-                    <span>GitHub</span>
+                <a href="mailto:hello@archicraft.app?subject=Beta%20Anmeldung%20ArchiCraft&body=Hallo%2C%20ich%20m%C3%B6chte%20mich%20hiermit%20zur%20Beta%20Version%20und%20weiteren%20Produktank%C3%BCndigungen%20anmelden." class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors inline-flex items-center space-x-2">
+                    <span>Zur Beta anmelden</span>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-12">
+    <section class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
             
             <!-- Großes Logo mittig über der Überschrift -->
             <div class="flex flex-col items-center justify-center mb-6">
-                <img src="archicraft.png" alt="ArchiCraft Logo" class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl shadow-xl border-2 border-blue-400/40 mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono font-semibold">0.1.0 Alpha</span>
-            </div>
-
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-300 text-xs font-mono mb-6">
-                <span>Die BIM Softwarelösung für Architekt:innen</span>
+                <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-28 h-28 sm:w-32 sm:h-32 block mb-4">
+                <span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono font-semibold">ArchiCraft 0.1.0 Alpha</span>
             </div>
             
             <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
-                Open-Source Archi CAD und BIM
+                An die Stifte, fertig, los.
             </h1>
             
             <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-                ArchiCraft ist ein modernes, kostenloses Werkzeug für Architekt:innen und Planer:innen. Erstellen Sie Entwürfe in 2D oder 3D in Echtzeit, Planen Sie komplexe Gebäude oder erstellen Sie Visualisierungen in einer intuitiven Arbeitsumgebung.
+                ArchiCraft ist Ihr kostenloses open-source Archi CAD und BIM Werkzeug. Erstellen Sie Entwürfe in 2D oder 3D in Echtzeit, planen Sie komplexe Gebäude oder erstellen Sie Visualisierungen in einer intuitiven Arbeitsumgebung.
             </p>
 
-            <!-- Farbgetauschte Buttons: GitHub nun unaufdringlich, Beta nun Blau -->
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-semibold px-6 py-3 rounded-lg transition-colors text-center">
+                <a href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-semibold px-6 py-3 rounded-lg transition-colors text-center shadow-sm">
                     Quellcode auf GitHub ansehen
                 </a>
                 <a href="mailto:hello@archicraft.app?subject=Beta%20Anmeldung%20ArchiCraft&body=Hallo%2C%20ich%20m%C3%B6chte%20mich%20hiermit%20zur%20Beta%20Version%20und%20weiteren%20Produktank%C3%BCndigungen%20anmelden." class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors text-center">
@@ -105,48 +97,90 @@
             </div>
         </div>
 
-        <!-- Embedded Interactive Showcase directly in Hero -->
-        <div id="showcase" class="max-w-5xl mx-auto">
-            <!-- Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mb-6">
-                <button onclick="showTab('tab-ground')" id="btn-tab-ground" class="tab-btn active px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold transition-all">
-                    Plane im Grundriss
-                </button>
-                <button onclick="showTab('tab-3d-persp')" id="btn-tab-3d-persp" class="tab-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold transition-all">
-                    Kontrolliere in 3D
-                </button>
-                <button onclick="showTab('tab-layers')" id="btn-tab-layers" class="tab-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold transition-all">
-                    Ordne nach Layer
-                </button>
-                <button onclick="showTab('tab-materials')" id="btn-tab-materials" class="tab-btn px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-sm font-semibold transition-all">
-                    Verwalte alle Materialien
-                </button>
-            </div>
+        <!-- Alternierende Bild- & Textreihe (Zick-Zack-Showcase) -->
+        <div id="showcase" class="max-w-6xl mx-auto space-y-20 md:space-y-28">
 
-            <!-- Tab Content Displays -->
-            <div>
-                <div id="tab-ground" class="tab-content">
-                    <img src="ac_grundriss.png" alt="Plane im Grundriss" class="w-full h-auto block">
-                </div>
-                <div id="tab-3d-persp" class="tab-content hidden">
+            <!-- Reihe 1: Bild LINKS, Text RECHTS (3D Ansicht) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-7 order-1">
                     <img src="ac_3d.png" alt="Kontrolliere in 3D" class="w-full h-auto block">
                 </div>
-                <div id="tab-layers" class="tab-content hidden">
+                <div class="lg:col-span-5 order-2">
+                    <div class="inline-block px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-bold mb-3 border border-emerald-500/20">
+                        3D-Visualisierung & Orbit
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Planen in 2D und 3D in einer gewohnten Arbeitsumgebung
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Entdecken Sie Werkzeuge in der Menüleiste links sowie die Geschoßübersicht und Papierlayouts rechts.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Reihe 2: Text LINKS, Bild RECHTS (2D Grundriss) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="inline-block px-3 py-1 rounded-md bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-mono font-bold mb-3 border border-blue-500/20">
+                        2D-Grundriss-Editor
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Präzise 2D-Grundrisse & Wandkonstruktionen
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Zeichnen Sie millimetergenaue Außen- und Innenwände, legen Sie Wandstärken flexibel fest und behalten Sie den Überblick über Ausrichtungen und Maßketten in allen Etagen.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <img src="ac_grundriss.png" alt="Plane im Grundriss" class="w-full h-auto block">
+                </div>
+            </div>
+
+            <!-- Reihe 3: Bild LINKS, Text RECHTS (Layerverwaltung) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-7 order-1">
                     <img src="ac_layer.png" alt="Ordne nach Layer" class="w-full h-auto block">
                 </div>
-                <div id="tab-materials" class="tab-content hidden">
+                <div class="lg:col-span-5 order-2">
+                    <div class="inline-block px-3 py-1 rounded-md bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 text-xs font-mono font-bold mb-3 border border-red-500/20">
+                        Ebenen & Strukturierung
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Strukturierte Ebenen- & Layerverwaltung
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Organisieren Sie Ihr Projekt in klare Baugruppen. Schalten Sie Ebenen für Wände, Öffnungen, Möblierung oder Terrassen separat sichtbar, gesperrt oder ausgeblendet.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Reihe 4: Text LINKS, Bild RECHTS (Materialverwaltung) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-5 order-2 lg:order-1">
+                    <div class="inline-block px-3 py-1 rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 text-xs font-mono font-bold mb-3 border border-amber-500/20">
+                        Materialkatalog & Baustoffe
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Umfangreicher Material- & Baustoffkatalog
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Wählen Sie aus vielfältigen Baustoffen von Stahlbeton über Ziegel, Dämmmaterialien bis hin zu Glaselementen. Weisen Sie Bauteilen physikalische Eigenschaften und Optiken zu.
+                    </p>
+                </div>
+                <div class="lg:col-span-7 order-1 lg:order-2">
                     <img src="ac_material.png" alt="Verwalte alle Materialien" class="w-full h-auto block">
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Community & Open Source Section -->
-    <section id="community" class="py-16 bg-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="community" class="py-16 bg-blue-600 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h2 class="text-3xl font-extrabold mb-4">Ein Projekt von Architekt:innen für Architekt:innen</h2>
-            <p class="text-blue-100 max-w-2xl mx-auto mb-8 text-lg">
-                ArchiCraft ist ein freies Open-Source-Projekt entwickelt von Architekt:innen für alle Menschen die Planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutzen Sie die kostenlose Architektursoftware ArchiCraft noch heute! <br><br>Entwickler:innen, Planer:innen und Architektur-Begeisterte sind herzlich eingeladen mitzumachen! Schlagen Sie neue Funktionen vor, melden Sie Fehler oder tragen Sie etwas zum Quellcode bei, gemeinsam schaffen wir etwas Großartiges.
+            <p class="text-blue-100 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
+                ArchiCraft ist ein freies Open-Source-Projekt entwickelt von Architekt:innen für alle Menschen die planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutzen Sie die kostenlose Architektursoftware ArchiCraft noch heute! <br><br>Entwickler:innen, Planer:innen und Architektur-Begeisterte sind herzlich eingeladen mitzumachen! Schlagen Sie neue Funktionen vor, melden Sie Fehler oder tragen Sie etwas zum Quellcode bei, gemeinsam schaffen wir etwas Großartiges.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 hover:bg-blue-50 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
@@ -163,11 +197,11 @@
     <footer class="py-8 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div class="flex items-center space-x-3">
-                <img src="archicraft.png" alt="ArchiCraft Logo" class="w-6 h-6 rounded-md">
+                <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-6 h-6 block">
                 <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">ArchiCraft Project</span>
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400">
-                hello@archicraft.app | Jakob Brandstötter & Alexander Partsch | copyright 2026
+                Jakob Brandstötter und Alexander Partsch | copyright 2026
             </p>
         </div>
     </footer>
@@ -201,15 +235,6 @@
                 header.classList.add('opacity-0', 'pointer-events-none');
             }
         });
-
-        // Tab Switching Logic
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-
-            document.getElementById(tabId).classList.remove('hidden');
-            document.getElementById('btn-' + tabId).classList.add('active');
-        }
     </script>
 </body>
 </html>
