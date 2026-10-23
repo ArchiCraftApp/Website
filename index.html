@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="light">
+<html lang="de" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,18 +53,18 @@
 <body class="text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300">
 
     <!-- Sticky Navigation (ausgeblendet am Anfang, blendet sich beim Scrollen ein) -->
-    <header id="mainHeader" class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 opacity-0 pointer-events-none transition-opacity duration-300">
+    <header id="mainHeader" class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 transition-opacity duration-300 opacity-0 pointer-events-none">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <img src="Archicraft_Logo.png" alt="ArchiCraft Icon" class="w-10 h-10 block">
+            <button onclick="scrollToTop()" class="flex items-center space-x-3 text-left focus:outline-none group">
+                <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/Archicraft_Logo_6W5W.png" alt="ArchiCraft Icon" class="w-10 h-10 block transition-transform group-hover:scale-105">
                 <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ArchiCraft</span>
-                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono">ArchiCraft 0.1.0 Alpha</span>
-            </div>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono">0.1.0 Alpha</span>
+            </button>
 
             <div class="flex items-center space-x-4">
-                <a href="mailto:hello@archicraft.app?subject=Beta%20Anmeldung%20ArchiCraft&body=Hallo%2C%20ich%20m%C3%B6chte%20mich%20hiermit%20zur%20Beta%20Version%20und%20weiteren%20Produktank%C3%BCndigungen%20anmelden." class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors inline-flex items-center space-x-2">
-                    <span>Zur Beta anmelden</span>
-                </a>
+                <button onclick="openDownloadModal()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors inline-flex items-center space-x-2">
+                    <span>Download ↵</span>
+                </button>
             </div>
         </div>
     </header>
@@ -75,7 +75,7 @@
             
             <!-- Großes Logo mittig über der Überschrift -->
             <div class="flex flex-col items-center justify-center mb-6">
-                <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-28 h-28 sm:w-32 sm:h-32 block mb-4">
+                <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/Archicraft_Logo_6W5W.png" alt="ArchiCraft Logo" class="w-28 h-28 sm:w-32 sm:h-32 block mb-4">
                 <span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono font-semibold">ArchiCraft 0.1.0 Alpha</span>
             </div>
             
@@ -84,16 +84,16 @@
             </h1>
             
             <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-                ArchiCraft ist Ihr kostenloses open-source Archi CAD und BIM Werkzeug. Erstellen Sie Entwürfe in 2D oder 3D in Echtzeit, planen Sie komplexe Gebäude oder erstellen Sie Visualisierungen in einer intuitiven Arbeitsumgebung.
+                ArchiCraft ist ein Open-Source Archi CAD und BIM Werkzeug für Architekt:innen und alle die planen wollen. Erstelle einfache Entwürfe in 2D oder 3D, plane komplexe Gebäude oder erzeuge professionelle Visualisierungen in einer intuitiven Arbeitsumgebung.
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-semibold px-6 py-3 rounded-lg transition-colors text-center shadow-sm">
-                    Quellcode auf GitHub ansehen
+                    Quellcode auf GitHub
                 </a>
-                <a href="mailto:hello@archicraft.app?subject=Beta%20Anmeldung%20ArchiCraft&body=Hallo%2C%20ich%20m%C3%B6chte%20mich%20hiermit%20zur%20Beta%20Version%20und%20weiteren%20Produktank%C3%BCndigungen%20anmelden." class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors text-center">
-                    Zur Beta anmelden
-                </a>
+                <button onclick="openDownloadModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors text-center">
+                    Jetzt herunterladen ↵
+                </button>
             </div>
         </div>
 
@@ -103,17 +103,17 @@
             <!-- Reihe 1: Bild LINKS, Text RECHTS (3D Ansicht) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-7 order-1">
-                    <img src="ac_3d.png" alt="Kontrolliere in 3D" class="w-full h-auto block">
+                    <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/ac_3d_6W5W.png" alt="Kontrolliere in 3D" class="w-full h-auto block">
                 </div>
                 <div class="lg:col-span-5 order-2">
                     <div class="inline-block px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-bold mb-3 border border-emerald-500/20">
-                        3D-Visualisierung & Orbit
+                        Entwirf alles in 3D
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Planen in 2D und 3D in einer gewohnten Arbeitsumgebung
+                        Von Anfang an Dreidimensional
                     </h2>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Entdecken Sie Werkzeuge in der Menüleiste links sowie die Geschoßübersicht und Papierlayouts rechts.
+                        Arbeite in einer leicht verständlichen Benutzeroberfläche. Werkzeuge links. Eigenschaften oben. Navigation rechts. Immer im Zentrum: dein Entwurf.
                     </p>
                 </div>
             </div>
@@ -122,34 +122,34 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
                     <div class="inline-block px-3 py-1 rounded-md bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-mono font-bold mb-3 border border-blue-500/20">
-                        2D-Grundriss-Editor
+                        Grundriss-Editor
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Präzise 2D-Grundrisse & Wandkonstruktionen
+                        Das Herzstück deiner Entwürfe
                     </h2>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Zeichnen Sie millimetergenaue Außen- und Innenwände, legen Sie Wandstärken flexibel fest und behalten Sie den Überblick über Ausrichtungen und Maßketten in allen Etagen.
+                        Zeichne lagegenau Außen- und Innenwände, lege Wandeigenschaften und Wandachse flexibel fest und behalte einfach den Überblick über deine Entwürfe.
                     </p>
                 </div>
                 <div class="lg:col-span-7 order-1 lg:order-2">
-                    <img src="ac_grundriss.png" alt="Plane im Grundriss" class="w-full h-auto block">
+                    <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/ac_grundriss_6W5W.png" alt="Plane im Grundriss" class="w-full h-auto block">
                 </div>
             </div>
 
             <!-- Reihe 3: Bild LINKS, Text RECHTS (Layerverwaltung) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-7 order-1">
-                    <img src="ac_layer.png" alt="Ordne nach Layer" class="w-full h-auto block">
+                    <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/ac_layer_6W5W.png" alt="Ordne nach Layer" class="w-full h-auto block">
                 </div>
                 <div class="lg:col-span-5 order-2">
                     <div class="inline-block px-3 py-1 rounded-md bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 text-xs font-mono font-bold mb-3 border border-red-500/20">
-                        Ebenen & Strukturierung
+                        Layerverwaltung
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Strukturierte Ebenen- & Layerverwaltung
+                         Ebenen- &amp; Layermanagement
                     </h2>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Organisieren Sie Ihr Projekt in klare Baugruppen. Schalten Sie Ebenen für Wände, Öffnungen, Möblierung oder Terrassen separat sichtbar, gesperrt oder ausgeblendet.
+                        Organisieren Sie Ihr Projekt in beliebige Ebenen. Schalten Sie Ebenen für Wände, Öffnungen, Möblierung oder Terrassen separat sichtbar, gesperrt oder ausgeblendet.
                     </p>
                 </div>
             </div>
@@ -158,36 +158,36 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
                     <div class="inline-block px-3 py-1 rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 text-xs font-mono font-bold mb-3 border border-amber-500/20">
-                        Materialkatalog & Baustoffe
+                        Materialkatalog
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Umfangreicher Material- & Baustoffkatalog
+                        Material- &amp; Baustoffkatalog
                     </h2>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Wählen Sie aus vielfältigen Baustoffen von Stahlbeton über Ziegel, Dämmmaterialien bis hin zu Glaselementen. Weisen Sie Bauteilen physikalische Eigenschaften und Optiken zu.
+                        Wählen Sie aus einem übersichtlichen Katalog, Baustoffe von Holz oder Stahlbeton über Ziegel, Dämmmaterialien bis hin zu Glaselementen. Weisen Sie Bauteilen physikalische Eigenschaften und Optiken zu.
                     </p>
                 </div>
                 <div class="lg:col-span-7 order-1 lg:order-2">
-                    <img src="ac_material.png" alt="Verwalte alle Materialien" class="w-full h-auto block">
+                    <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/ac_material_6W5W.png" alt="Verwalte alle Materialien" class="w-full h-auto block">
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Community & Open Source Section -->
-    <section id="community" class="py-16 bg-blue-600 text-white relative overflow-hidden">
+    <!-- Community & Open Source Section (Abgerundet und eingerückt) -->
+    <section id="community" class="py-16 bg-blue-600 text-white relative overflow-hidden rounded-3xl max-w-6xl mx-auto my-16 shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl font-extrabold mb-4">Ein Projekt von Architekt:innen für Architekt:innen</h2>
+            <h2 class="text-3xl font-extrabold mb-4">Die Open-Source-Software für Architekt:innen</h2>
             <p class="text-blue-100 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
-                ArchiCraft ist ein freies Open-Source-Projekt entwickelt von Architekt:innen für alle Menschen die planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutzen Sie die kostenlose Architektursoftware ArchiCraft noch heute! <br><br>Entwickler:innen, Planer:innen und Architektur-Begeisterte sind herzlich eingeladen mitzumachen! Schlagen Sie neue Funktionen vor, melden Sie Fehler oder tragen Sie etwas zum Quellcode bei, gemeinsam schaffen wir etwas Großartiges.
+                ArchiCraft ist ein freies, quelloffenes Projekt entwickelt von und für Menschen, die entwerfen oder planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutzen Sie die kostenlose Architektursoftware ArchiCraft noch heute!
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 hover:bg-blue-50 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
-                    GitHub Repository besuchen
+                <a href="https://github.com/ArchiCraftApp/ArchiCraft/issues" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 hover:bg-blue-50 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
+                    Mitwirken oder Bug melden
                 </a>
-                <a href="https://github.com/ArchiCraftApp/ArchiCraft/issues" target="_blank" rel="noopener noreferrer" class="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg border border-blue-400 transition-colors">
-                    Issue erstellen / Mitwirken
+                <a href="mailto:hawideri@archicraft.app" target="_blank" rel="noopener noreferrer" class="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg border border-blue-400 transition-colors">
+                    Sende uns deine Ideen
                 </a>
             </div>
         </div>
@@ -197,14 +197,109 @@
     <footer class="py-8 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div class="flex items-center space-x-3">
-                <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-6 h-6 block">
-                <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">ArchiCraft Project</span>
+                <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/Archicraft_Logo_6W5W.png" alt="ArchiCraft Icon" class="w-6 h-6 block">
+                <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">ArchiCraft App</span>
             </div>
-            <p class="text-xs text-slate-500 dark:text-slate-400">
-                Jakob Brandstötter und Alexander Partsch | copyright 2026
-            </p>
+            <button onclick="openImpressumModal()" class="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
+                Impressum
+            </button>
         </div>
     </footer>
+
+    <!-- Download Modal / Popup -->
+    <div id="downloadModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/30 backdrop-blur-md hidden">
+        <div class="bg-white text-slate-900 rounded-2xl shadow-2xl p-6 md:p-8 max-w-3xl w-full mx-4 relative border border-slate-200">
+            <!-- Close Button (Kreis mit X in der Mitte) -->
+            <button onclick="closeDownloadModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- App Logo oben mittig & Titel -->
+            <div class="flex flex-col items-center justify-center text-center mb-8">
+                <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/Archicraft_Logo_6W5W.png" alt="ArchiCraft Logo" class="w-16 h-16 block mb-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">ArchiCraft Download</h3>
+                <p class="text-sm text-slate-500">Wähle die passende Plattform aus. Alle Downloads sind für 64-Bit-Systeme.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <!-- Spalte 1: Windows -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 flex flex-col justify-between min-h-[220px]">
+                    <div class="flex flex-col items-center mb-4">
+                        <div class="font-bold text-slate-900 text-lg mb-1">Windows</div>
+                        <div class="text-xs text-slate-500">x86_64 installer</div>
+                    </div>
+                    <div class="w-full">
+                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261021-d1bc955/ArchiCraft-0.1.0-20261021-d1bc955-windows-x86_64.zip" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
+                            Download  ↵
+                        </a>
+                        <p class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Derzeit werden Windows 10 und Windows 11 unterstützt.<br><br><br></p>
+                    </div>
+                </div>
+                
+                <!-- Spalte 2: macOS -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 flex flex-col justify-between min-h-[220px]">
+                    <div class="flex flex-col items-center mb-4">
+                        <div class="font-bold text-slate-900 text-lg mb-1">macOS</div>
+                        <div class="text-xs text-slate-500">Apple Silicon</div>
+                    </div>
+                    <div class="w-full">
+                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261021-d1bc955/ArchiCraft-0.1.0-20261021-d1bc955-macos-arm64.dmg" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
+                            Download ↵
+                        </a>
+                        <p class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Derzeit werden alle Apple Computer mit M-Chip und macOS 26 oder neuer unterstützt.</p>
+                    </div>
+                </div>
+                
+                <!-- Spalte 3: Linux -->
+                <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/50 flex flex-col justify-between min-h-[220px]">
+                    <div class="flex flex-col items-center mb-4">
+                        <div class="font-bold text-slate-900 text-lg mb-1">Linux</div>
+                        <div class="text-xs text-slate-500">x86_64 installer</div>
+                    </div>
+                    <div class="w-full">
+                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261021-d1bc955/ArchiCraft-0.1.0-20261021-d1bc955-linux-x86_64.tar.gz" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
+                            Download ↵
+                        </a>
+                        <p class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Wir unterstützen eine Vielzahl von Linux Distributionen mit diesem Build. Sorry Flatpak fehlt derzeit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impressum Modal / Popup -->
+    <div id="impressumModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/30 backdrop-blur-md hidden">
+        <div class="bg-white text-slate-900 rounded-2xl shadow-2xl p-6 md:p-8 max-w-xl w-full mx-4 relative border border-slate-200">
+            <!-- Close Button (Kreis mit X in der Mitte) -->
+            <button onclick="closeImpressumModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- App Logo oben mittig & Titel -->
+            <div class="flex flex-col items-center justify-center text-center mb-6">
+                <img src="ArchiCraft%20-%20Open%20Source%20Architektur%20CAD%20und%20BIM%20Software_files/Archicraft_Logo_6W5W.png" alt="ArchiCraft Logo" class="w-16 h-16 block mb-3">
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">Impressum</h3>
+            </div>
+            
+            <div class="text-sm text-slate-600 space-y-2 leading-relaxed text-center">
+                <p class="font-semibold text-slate-900">ArchiCraft App</p>
+                <p>Jakob Brandstötter und Alexander M. Partsch</p>
+                <p>Schönbrunner Straße 5/1, 1040 Wien, Österreich</p>
+                <p><a href="mailto:pleasedonotsueus@archicraft.app" class="text-blue-600 hover:underline">pleasedonotsueus@archicraft.app</a></p>
+                <p class="pt-4 text-xs text-slate-500 leading-relaxed">
+                   Lizenz
+<br>This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. See <a href="https://github.com/ArchiCraftApp/ArchiCraft/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">LICENSE</a>. Copyright 2026<br>
+
+<br>Datenschutz
+<br>Diese Website erfasst keine personenbezogenen Daten und verwendet keine Cookies. Der Server steht in Österreich. Technisch notwendige Logfiles werden nicht gespeichert oder ausgewertet.<br>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -224,6 +319,14 @@
 
         applyTimeBasedTheme();
 
+        // Scroll to Top Logic
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
         // Header Scroll Visibility Logic
         window.addEventListener('scroll', () => {
             const header = document.getElementById('mainHeader');
@@ -233,6 +336,36 @@
             } else {
                 header.classList.remove('opacity-100');
                 header.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Download Modal Logic
+        function openDownloadModal() {
+            document.getElementById('downloadModal').classList.remove('hidden');
+        }
+
+        function closeDownloadModal() {
+            document.getElementById('downloadModal').classList.add('hidden');
+        }
+
+        // Impressum Modal Logic
+        function openImpressumModal() {
+            document.getElementById('impressumModal').classList.remove('hidden');
+        }
+
+        function closeImpressumModal() {
+            document.getElementById('impressumModal').classList.add('hidden');
+        }
+
+        // Schließen bei Klick außerhalb des Modal-Fensters
+        window.addEventListener('click', (e) => {
+            const downloadModal = document.getElementById('downloadModal');
+            const impressumModal = document.getElementById('impressumModal');
+            if (e.target === downloadModal) {
+                closeDownloadModal();
+            }
+            if (e.target === impressumModal) {
+                closeImpressumModal();
             }
         });
     </script>
