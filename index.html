@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArchiCraft - Open Source Architektur CAD und BIM Software</title>
+    <title id="docTitle">ArchiCraft - Open Source Architektur CAD und BIM Software</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,15 +12,15 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#eef6ff',
-                            100: '#e0edff',
-                            500: '#0066ff',
-                            600: '#0052cc',
-                            700: '#003d99',
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#18181b',
+                            600: '#09090b',
+                            700: '#000000',
                         },
                         logoGreen: '#22c55e',
                         logoRed: '#ef4444',
-                        logoBlue: '#2563eb'
+                        logoBlue: '#18181b'
                     }
                 }
             }
@@ -58,12 +58,12 @@
             <button onclick="scrollToTop()" class="flex items-center space-x-3 text-left focus:outline-none group">
                 <img src="Archicraft_Logo.png" alt="ArchiCraft Icon" class="w-10 h-10 block transition-transform group-hover:scale-105">
                 <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ArchiCraft</span>
-                <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono">Alpha</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200 font-mono">0.1.0 Alpha</span>
             </button>
 
             <div class="flex items-center space-x-4">
-                <button onclick="openDownloadModal()" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors inline-flex items-center space-x-2">
-                    <span>Download ↵</span>
+                <button onclick="openDownloadModal()" class="bg-black hover:bg-zinc-800 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-sm transition-colors inline-flex items-center space-x-2">
+                    <span data-i18n="navDownload">Download ↵</span>
                 </button>
             </div>
         </div>
@@ -76,23 +76,23 @@
             <!-- Großes Logo mittig über der Überschrift -->
             <div class="flex flex-col items-center justify-center mb-6">
                 <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-28 h-28 sm:w-32 sm:h-32 block mb-4">
-                <span class="text-xs px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 font-mono font-semibold">ArchiCraft 0.1.0 Alpha</span>
+                <span class="text-xs px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200 font-mono font-semibold">ArchiCraft 0.1.0 Alpha</span>
             </div>
             
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
+            <h1 id="heroTitle" class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
                 An die Stifte, fertig, los.
             </h1>
             
-            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+            <p id="heroDesc" class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
                 ArchiCraft ist ein Open-Source Archi CAD und BIM Werkzeug für Architekt:innen und alle die planen wollen. Erstelle Entwürfe in 2D oder 3D, plane komplexe Gebäude oder erzeuge professionelle Visualisierungen in einer intuitiven Arbeitsumgebung.
             </p>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://github.com/ArchiCraftApp" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-semibold px-6 py-3 rounded-lg transition-colors text-center shadow-sm">
+                <a id="githubBtn" href="https://github.com/ArchiCraftApp/ArchiCraft" target="_blank" rel="noopener noreferrer" class="bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700 font-semibold px-6 py-3 rounded-lg transition-colors text-center shadow-sm">
                     Quellcode auf GitHub
                 </a>
-                <button onclick="openDownloadModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors text-center">
-                    Jetzt herunterladen ↵
+                <button onclick="openDownloadModal()" class="bg-black hover:bg-zinc-800 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition-colors text-center">
+                    <span id="heroDownloadBtn">Jetzt herunterladen ↵</span>
                 </button>
             </div>
         </div>
@@ -103,17 +103,17 @@
             <!-- Reihe 1: Bild LINKS, Text RECHTS (3D Ansicht) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-7 order-1">
-                    <img src="ac_3d.png" alt="Kontrolliere in 3D" class="w-full h-auto block">
+                    <img id="img3d" src="ac_3d.png" alt="Kontrolliere in 3D" class="w-full h-auto block">
                 </div>
                 <div class="lg:col-span-5 order-2">
-                    <div class="inline-block px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-bold mb-3 border border-emerald-500/20">
-                        3D-Editor
+                    <div id="badge3d" class="inline-block px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200 text-xs font-mono font-bold mb-3 border border-slate-400/20">
+                        Entwirf alles in 3D
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Deine Idee: Ab jetzt in 3D.
+                    <h2 id="title3d" class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Von Anfang an Dreidimensional
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Arbeite in einer leicht verständlichen Benutzeroberfläche. Werkzeuge links. Eigenschaften oben. Navigation rechts. <br>Immer im Zentrum: Dein Entwurf.
+                    <p id="desc3d" class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Arbeite in einer leicht verständlichen Benutzeroberfläche. Werkzeuge links. Eigenschaften oben. Navigation rechts. Immer im Zentrum: dein Entwurf.
                     </p>
                 </div>
             </div>
@@ -121,34 +121,34 @@
             <!-- Reihe 2: Text LINKS, Bild RECHTS (2D Grundriss) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
-                    <div class="inline-block px-3 py-1 rounded-md bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs font-mono font-bold mb-3 border border-blue-500/20">
+                    <div id="badgeFloorplan" class="inline-block px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200 text-xs font-mono font-bold mb-3 border border-slate-400/20">
                         Grundriss-Editor
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Das Herzstück deines Entwurfs.
+                    <h2 id="titleFloorplan" class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Das Herzstück deiner Entwürfe
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p id="descFloorplan" class="text-slate-600 dark:text-slate-300 leading-relaxed">
                         Zeichne lagegenau Außen- und Innenwände, lege Wandeigenschaften und Wandachse flexibel fest und behalte einfach den Überblick über deine Entwürfe.
                     </p>
                 </div>
                 <div class="lg:col-span-7 order-1 lg:order-2">
-                    <img src="ac_grundriss.png" alt="Plane im Grundriss" class="w-full h-auto block">
+                    <img id="imgFloorplan" src="ac_grundriss.png" alt="Plane im Grundriss" class="w-full h-auto block">
                 </div>
             </div>
 
             <!-- Reihe 3: Bild LINKS, Text RECHTS (Layerverwaltung) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-7 order-1">
-                    <img src="ac_layermanager.png" alt="Ordne nach Layer" class="w-full h-auto block">
+                    <img id="imgLayer" src="ac_layer.png" alt="Ordne nach Layer" class="w-full h-auto block">
                 </div>
                 <div class="lg:col-span-5 order-2">
-                    <div class="inline-block px-3 py-1 rounded-md bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300 text-xs font-mono font-bold mb-3 border border-red-500/20">
+                    <div id="badgeLayer" class="inline-block px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200 text-xs font-mono font-bold mb-3 border border-slate-400/20">
                         Layerverwaltung
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                         Dein Ebenen- &amp; Layermanagement.
+                    <h2 id="titleLayer" class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                         Ebenen- &amp; Layermanagement
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p id="descLayer" class="text-slate-600 dark:text-slate-300 leading-relaxed">
                         Organisiere dein Projekt in beliebige Ebenen. Schalte Ebenen für Wände, Öffnungen, Möblierung oder Terrassen separat sichtbar, gesperrt oder ausgeblendet.
                     </p>
                 </div>
@@ -157,53 +157,36 @@
             <!-- Reihe 4: Text LINKS, Bild RECHTS (Materialverwaltung) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
-                    <div class="inline-block px-3 py-1 rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 text-xs font-mono font-bold mb-3 border border-amber-500/20">
+                    <div id="badgeMaterial" class="inline-block px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-200 text-xs font-mono font-bold mb-3 border border-slate-400/20">
                         Materialkatalog
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Smarter Material- &amp; Baustoffkatalog.
+                    <h2 id="titleMaterial" class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        Material- &amp; Baustoffkatalog
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p id="descMaterial" class="text-slate-600 dark:text-slate-300 leading-relaxed">
                         Wähle aus einem übersichtlichen Katalog Baustoffe von Holz oder Stahlbeton über Ziegel, Dämmmaterialien bis hin zu Glaselementen. Weise Bauteilen physikalische Eigenschaften und Optiken zu.
                     </p>
                 </div>
                 <div class="lg:col-span-7 order-1 lg:order-2">
-                    <img src="ac_material.png" alt="Verwalte alle Materialien" class="w-full h-auto block">
+                    <img id="imgMaterial" src="ac_material.png" alt="Verwalte alle Materialien" class="w-full h-auto block">
                 </div>
             </div>
-            
-            <!-- Reihe 5: Bild LINKS, Text RECHTS (Visualisierung) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                <div class="lg:col-span-7 order-1">
-                    <img src="ac_viz.png" alt="Visualisierungen erstellen" class="w-full h-auto block">
-                </div>
-                <div class="lg:col-span-5 order-2">
-                    <div class="inline-block px-3 py-1 rounded-md bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-xs font-mono font-bold mb-3 border border-purple-500/20">
-                        Visualisierung
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                        Schau, schau: Sieht schön aus.
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Erstelle Visualisierungen anhand deiner modellierten Geometrie. Verwende ein KI-Bildmodell deiner Wahl.
-                    </p>
-                </div>
-            </div>
+
         </div>
     </section>
 
     <!-- Community & Open Source Section (Abgerundet und eingerückt) -->
-    <section id="community" class="py-16 bg-blue-600 text-white relative overflow-hidden rounded-3xl max-w-6xl mx-auto my-16 shadow-xl">
+    <section id="community" class="py-16 bg-black text-white relative overflow-hidden rounded-3xl max-w-6xl mx-auto my-16 shadow-xl border border-zinc-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl font-extrabold mb-4">Die Open-Source-Software für Architekt:innen</h2>
-            <p class="text-blue-100 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
+            <h2 id="communityTitle" class="text-3xl font-extrabold mb-4">Die Open-Source-Software für Architekt:innen</h2>
+            <p id="communityDesc" class="text-slate-300 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
                 ArchiCraft ist ein freies, quelloffenes Projekt entwickelt von und für Menschen, die entwerfen oder planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutze die kostenlose Architektursoftware ArchiCraft noch heute!
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://github.com/ArchiCraftApp/ArchiCraft/issues" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 hover:bg-blue-50 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
+                <a id="communityIssueBtn" href="https://github.com/ArchiCraftApp/ArchiCraft/issues" target="_blank" rel="noopener noreferrer" class="bg-white text-black hover:bg-slate-200 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
                     Mitwirken oder Bug melden
                 </a>
-                <a href="mailto:pleasedonotsueus@archicraft.app" target="_blank" rel="noopener noreferrer" class="bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-lg border border-blue-400 transition-colors">
+                <a id="communityIdeaBtn" href="mailto:pleasedonotsueus@archicraft.app" target="_blank" rel="noopener noreferrer" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-6 py-3 rounded-lg border border-zinc-600 transition-colors">
                     Sende uns deine Ideen
                 </a>
             </div>
@@ -217,7 +200,7 @@
                 <img src="Archicraft_Logo.png" alt="ArchiCraft Icon" class="w-6 h-6 block">
                 <span class="text-sm font-semibold text-slate-700 dark:text-slate-300">ArchiCraft App</span>
             </div>
-            <button onclick="openImpressumModal()" class="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
+            <button id="footerImpressumBtn" onclick="openImpressumModal()" class="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
                 Impressum
             </button>
         </div>
@@ -236,8 +219,8 @@
             <!-- App Logo oben mittig & Titel -->
             <div class="flex flex-col items-center justify-center text-center mb-8">
                 <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-16 h-16 block mb-3">
-                <h3 class="text-2xl font-bold text-slate-900 mb-1">ArchiCraft Download</h3>
-                <p class="text-sm text-slate-500">Wähle die passende Plattform aus. Alle Downloads sind für 64-Bit-Systeme.</p>
+                <h3 id="modalDownloadTitle" class="text-2xl font-bold text-slate-900 mb-1">ArchiCraft Download</h3>
+                <p id="modalDownloadSub" class="text-sm text-slate-500">Wähle die passende Plattform aus. Alle Downloads sind für 64-Bit-Systeme.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -248,10 +231,10 @@
                         <div class="text-xs text-slate-500">x86_64 installer</div>
                     </div>
                     <div class="w-full">
-                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261027-63fae1d/ArchiCraft-0.1.0-20261027-63fae1d-windows-x86_64.zip" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
-                            Download  ↵
+                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261021-d1bc955/ArchiCraft-0.1.0-20261021-d1bc955-windows-x86_64.zip" class="block w-full bg-black hover:bg-zinc-800 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
+                            <span data-i18n="dlBtn">Download ↵</span>
                         </a>
-                        <p class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Derzeit werden Windows 10 und Windows 11 unterstützt.<br><br><br></p>
+                        <p id="winNote" class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Derzeit werden Windows 10 und Windows 11 unterstützt.<br><br><br></p>
                     </div>
                 </div>
                 
@@ -262,10 +245,10 @@
                         <div class="text-xs text-slate-500">Apple Silicon</div>
                     </div>
                     <div class="w-full">
-                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261027-63fae1d/ArchiCraft-0.1.0-20261027-63fae1d-macos-arm64.dmg" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
-                            Download ↵
+                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261021-d1bc955/ArchiCraft-0.1.0-20261021-d1bc955-macos-arm64.dmg" class="block w-full bg-black hover:bg-zinc-800 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
+                            <span data-i18n="dlBtn">Download ↵</span>
                         </a>
-                        <p class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Alle Apple Computer mit M-Chip und macOS 11 oder neuer werden unterstützt.<br><br></p>
+                        <p id="macNote" class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Derzeit werden alle Apple Computer mit M-Chip und macOS 26 oder neuer unterstützt.</p>
                     </div>
                 </div>
                 
@@ -276,10 +259,10 @@
                         <div class="text-xs text-slate-500">x86_64 installer</div>
                     </div>
                     <div class="w-full">
-                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261027-63fae1d/ArchiCraft-0.1.0-20261027-63fae1d-linux-x86_64.tar.gz" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
-                            Download ↵
+                        <a href="https://github.com/ArchiCraftApp/ArchiCraft/releases/download/preview-0.1.0-20261021-d1bc955/ArchiCraft-0.1.0-20261021-d1bc955-linux-x86_64.tar.gz" class="block w-full bg-black hover:bg-zinc-800 text-white text-sm font-semibold py-2.5 px-4 rounded-lg shadow-sm transition-colors mb-3 text-center">
+                            <span data-i18n="dlBtn">Download ↵</span>
                         </a>
-                        <p class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Wir unterstützen eine Vielzahl von Linux Distributionen mit diesem Build. Sorry Flatpak fehlt derzeit.</p>
+                        <p id="linuxNote" class="text-xs text-slate-500 leading-relaxed min-h-[32px]">Wir unterstützen eine Vielzahl von Linux Distributionen mit diesem Build. Sorry Flatpak fehlt derzeit.</p>
                     </div>
                 </div>
             </div>
@@ -299,7 +282,7 @@
             <!-- App Logo oben mittig & Titel -->
             <div class="flex flex-col items-center justify-center text-center mb-6">
                 <img src="Archicraft_Logo.png" alt="ArchiCraft Logo" class="w-16 h-16 block mb-3">
-                <h3 class="text-2xl font-bold text-slate-900 mb-1">Impressum & Datenschutz</h3>
+                <h3 id="modalImpressumTitle" class="text-2xl font-bold text-slate-900 mb-1">Impressum & Datenschutz</h3>
             </div>
             
             <div class="text-sm text-slate-600 space-y-4 leading-relaxed text-center">
@@ -307,18 +290,18 @@
                     <p class="font-semibold text-slate-900">ArchiCraft App</p>
                     <p>Jakob Brandstötter und Alexander M. Partsch</p>
                     <p>Schönbrunner Straße 5/1, 1040 Wien, Österreich</p>
-                    <p><a href="mailto:pleasedonotsueus@archicraft.app" class="text-blue-600 hover:underline">pleasedonotsueus@archicraft.app</a></p>
+                    <p><a href="mailto:pleasedonotsueus@archicraft.app" class="text-black dark:text-white underline hover:text-zinc-600">pleasedonotsueus@archicraft.app</a></p>
                 </div>
                 
                 <p class="pt-4 text-xs text-slate-500 leading-relaxed">
-                    <strong>Lizenz</strong><br>
-                    This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. See <a href="https://github.com/ArchiCraftApp/ArchiCraft/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">LICENSE</a>. Copyright 2026
+                    <strong id="licenseHeading">Lizenz</strong><br>
+                    This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-black dark:text-white underline hover:text-zinc-600">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. See <a href="https://github.com/ArchiCraftApp/ArchiCraft/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-black dark:text-white underline hover:text-zinc-600">LICENSE</a>. Copyright 2026
                 </p>
 
                 <p class="text-xs text-slate-500 leading-relaxed">
-                    <strong>Datenschutzhinweis</strong><br>
-                    Diese Website wird über den Hosting-Dienst GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf der Website erfasst GitHub automatisch technische Zugriffsdaten (Server-Logfiles inklusive der IP-Adresse der Nutzer:innen), die für die Bereitstellung und Auslieferung der Website technisch erforderlich sind. Wir selbst (die Betreiber:innen) erheben keine eigenen personenbezogenen Daten, verwenden keine Cookies und werten keine Logfiles aus.<br>
-                    Weitere Informationen dazu findest du in der Datenschutzerklärung von GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">GitHub Privacy Statement</a>.
+                    <strong id="privacyHeading">Datenschutzhinweis</strong><br>
+                    <span id="privacyText">Diese Website wird über den Hosting-Dienst GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) bereitgestellt. Beim Aufruf der Website erfasst GitHub automatisch technische Zugriffsdaten (Server-Logfiles inklusive der IP-Adresse der Nutzer:innen), die für die Bereitstellung und Auslieferung der Website technisch erforderlich sind. Wir selbst (die Betreiber:innen) erheben keine eigenen personenbezogenen Daten, verwenden keine Cookies und werten keine Logfiles aus.<br>
+                    Weitere Informationen dazu findest du in der Datenschutzerklärung von GitHub:</span> <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer" class="text-black dark:text-white underline hover:text-zinc-600">GitHub Privacy Statement</a>.
                 </p>
             </div>
         </div>
@@ -326,6 +309,75 @@
 
     <!-- Scripts -->
     <script>
+        // Automatic Browser Language Check (DE, AT, CH -> German, Else -> English)
+        function applyLanguageSettings() {
+            const userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            const isGermanRegion = userLang.startsWith('de');
+
+            if (!isGermanRegion) {
+                document.documentElement.lang = 'en';
+
+                // Title & Navigation
+                document.getElementById('docTitle').innerText = 'ArchiCraft - Open Source Architecture CAD and BIM Software';
+                document.querySelectorAll('[data-i18n="navDownload"]').forEach(el => el.innerText = 'Download ↵');
+
+                // Hero Section
+                document.getElementById('heroTitle').innerText = 'Ready, set, draw.';
+                document.getElementById('heroDesc').innerText = 'ArchiCraft is an open-source architecture CAD and BIM tool for architects and anyone who wants to design. Create drafts in 2D or 3D, plan complex buildings, or generate professional visualizations in an intuitive workspace.';
+                document.getElementById('githubBtn').innerText = 'Source code on GitHub';
+                document.getElementById('heroDownloadBtn').innerText = 'Download now ↵';
+
+                // Showcase 1: 3D
+                document.getElementById('img3d').alt = 'Control in 3D';
+                document.getElementById('badge3d').innerText = 'Design everything in 3D';
+                document.getElementById('title3d').innerText = 'Three-dimensional from the start';
+                document.getElementById('desc3d').innerText = 'Work in an easy-to-understand user interface. Tools on the left. Properties on top. Navigation on the right. Always in the center: your design.';
+
+                // Showcase 2: Floorplan
+                document.getElementById('imgFloorplan').alt = 'Plan in floorplan view';
+                document.getElementById('badgeFloorplan').innerText = 'Floorplan Editor';
+                document.getElementById('titleFloorplan').innerText = 'The heart of your designs';
+                document.getElementById('descFloorplan').innerText = 'Draw precise exterior and interior walls, flexibly define wall properties and wall axes, and easily keep track of your drafts.';
+
+                // Showcase 3: Layer
+                document.getElementById('imgLayer').alt = 'Organize by layer';
+                document.getElementById('badgeLayer').innerText = 'Layer Management';
+                document.getElementById('titleLayer').innerText = 'Level & Layer Management';
+                document.getElementById('descLayer').innerText = 'Organize your project into custom layers. Toggle visibility, lock, or hide layers for walls, openings, furniture, or terraces separately.';
+
+                // Showcase 4: Material
+                document.getElementById('imgMaterial').alt = 'Manage all materials';
+                document.getElementById('badgeMaterial').innerText = 'Material Catalog';
+                document.getElementById('titleMaterial').innerText = 'Material & Building Catalog';
+                document.getElementById('descMaterial').innerText = 'Choose from a clean catalog of building materials ranging from wood or reinforced concrete to bricks, insulation materials, and glass elements. Assign physical properties and appearances to components.';
+
+                // Community Section
+                document.getElementById('communityTitle').innerText = 'The open-source software for architects';
+                document.getElementById('communityDesc').innerText = 'ArchiCraft is a free, open-source project created by and for people who want to design or plan. Hostile subscription models and proprietary file formats have no place here. Use the free architecture software ArchiCraft today!';
+                document.getElementById('communityIssueBtn').innerText = 'Contribute or report a bug';
+                document.getElementById('communityIdeaBtn').innerText = 'Send us your ideas';
+
+                // Footer & Modals
+                document.getElementById('footerImpressumBtn').innerText = 'Imprint & Legal';
+                
+                // Download Modal
+                document.getElementById('modalDownloadTitle').innerText = 'ArchiCraft Download';
+                document.getElementById('modalDownloadSub').innerText = 'Choose the right platform. All downloads are for 64-bit systems.';
+                document.querySelectorAll('[data-i18n="dlBtn"]').forEach(el => el.innerText = 'Download ↵');
+                document.getElementById('winNote').innerHTML = 'Currently supporting Windows 10 and Windows 11.<br><br><br>';
+                document.getElementById('macNote').innerText = 'Currently supporting all Apple computers with M-chip and macOS 26 or newer.';
+                document.getElementById('linuxNote').innerText = 'We support a variety of Linux distributions with this build. Sorry, Flatpak is currently missing.';
+
+                // Impressum Modal
+                document.getElementById('modalImpressumTitle').innerText = 'Imprint & Privacy Policy';
+                document.getElementById('licenseHeading').innerText = 'License';
+                document.getElementById('privacyHeading').innerText = 'Privacy Notice';
+                document.getElementById('privacyText').innerText = 'This website is hosted via GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When visiting the website, GitHub automatically collects technical access data (server log files including the IP address of users) required for providing and delivering the website. We (the operators) do not collect any personal data, do not use cookies, and do not evaluate log files. For more information, please see GitHub\'s privacy policy:';
+            }
+        }
+
+        applyLanguageSettings();
+
         // Automatic Time-based Dark Mode Logic (18:00 to 08:00 Dark, else Light)
         function applyTimeBasedTheme() {
             const htmlElement = document.documentElement;
