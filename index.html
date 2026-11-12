@@ -198,23 +198,194 @@
         </div>
     </section>
 
-    <!-- Community & Open Source Section (Abgerundet und eingerückt) -->
-    <section id="community" class="py-16 bg-zinc-900 text-white relative overflow-hidden rounded-3xl max-w-6xl mx-auto my-16 shadow-xl border border-zinc-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 id="communityTitle" class="text-3xl font-extrabold mb-4">Die Open-Source-Software für Architekt:innen</h2>
-            <p id="communityDesc" class="text-zinc-300 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
-                ArchiCraft ist ein freies, quelloffenes Projekt entwickelt von und für Menschen, die entwerfen oder planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutze die kostenlose Architektursoftware ArchiCraft noch heute!
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a id="communityIssueBtn" href="https://github.com/ArchiCraftApp/ArchiCraft/issues" target="_blank" rel="noopener noreferrer" class="bg-white text-zinc-900 hover:bg-zinc-200 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
-                    Mitwirken oder Bug melden
-                </a>
-                <a id="communityIdeaBtn" href="mailto:pleasedonotsueus@archicraft.app" target="_blank" rel="noopener noreferrer" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-6 py-3 rounded-lg border border-zinc-600 transition-colors">
-                    Sende uns deine Ideen
-                </a>
+    <!-- Gemeinsamer Haupt-Wrapper für Roadmap und Open-Source-Bereich (Gleiche Außenkanten) -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-16 space-y-16">
+
+        <!-- Roadmap & Features Sektion -->
+        <section class="bg-white dark:bg-zinc-900 rounded-3xl p-6 sm:p-10 border border-zinc-200 dark:border-zinc-800 shadow-xl w-full">
+            
+            <!-- Überschrift -->
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">Feature Roadmap</h2>
             </div>
-        </div>
-    </section>
+
+            <!-- Horizontale Timeline mit schwarzer Linie (ohne Pfeil am Ende) -->
+            <div class="mb-14">
+                <!-- Desktop Timeline (Horizontal) -->
+                <div class="relative hidden md:block px-6">
+                    <!-- Schwarze Verbindungslinie im Hintergrund (beginnt bei Punkt 1 und endet sauber bei Punkt 3) -->
+                    <div class="absolute top-4 left-16 right-16 h-0.5 bg-zinc-900 dark:bg-zinc-100 z-0"></div>
+                    
+                    <div class="grid grid-cols-3 gap-6 relative z-10">
+                        
+                        <!-- Meilenstein 1 (Startpunkt der Linie) -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-8 h-8 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-mono text-xs font-bold flex items-center justify-center shadow-md mb-3 border-2 border-white dark:border-zinc-900">1</div>
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100 mb-1">16.10.2026</span>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-0.5">"Walking Skeleton"</h4>
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300">Tech Preview</p>
+                        </div>
+
+                        <!-- Meilenstein 2 -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-8 h-8 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-mono text-xs font-bold flex items-center justify-center shadow-md mb-3 border-2 border-white dark:border-zinc-900">2</div>
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100 mb-1">30.10.2026</span>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-0.5">"Public Release"</h4>
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300">Launch Website</p>
+                        </div>
+
+                        <!-- Meilenstein 3 (Endpunkt der Linie, ohne Pfeil) -->
+                        <div class="flex flex-col items-center text-center relative">
+                            <div class="w-8 h-8 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-mono text-xs font-bold flex items-center justify-center shadow-md mb-3 border-2 border-white dark:border-zinc-900">3</div>
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100 mb-1">11.11.2026</span>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white mb-0.5">"Light in sight"</h4>
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300">Erweiterte Werkzeuge und Menüs</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Mobile Timeline (Vertikale Ansicht für Smartphones) -->
+                <div class="md:hidden space-y-4">
+                    <div class="p-4 rounded-xl border border-zinc-100 dark:border-zinc-800/60 bg-zinc-50 dark:bg-zinc-900/40 flex items-start space-x-3">
+                        <span class="w-6 h-6 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-mono text-xs font-bold flex items-center justify-center shrink-0">1</span>
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">16.10.2026</span>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white">"Walking Skeleton"</h4>
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300">Tech Preview</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl border border-zinc-100 dark:border-zinc-800/60 bg-zinc-50 dark:bg-zinc-900/40 flex items-start space-x-3">
+                        <span class="w-6 h-6 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-mono text-xs font-bold flex items-center justify-center shrink-0">2</span>
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">30.10.2026</span>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white">"Public Release"</h4>
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300">Launch Website</p>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl border border-zinc-100 dark:border-zinc-800/60 bg-zinc-50 dark:bg-zinc-900/40 flex items-start space-x-3">
+                        <span class="w-6 h-6 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-mono text-xs font-bold flex items-center justify-center shrink-0">3</span>
+                        <div>
+                            <span class="text-xs font-mono font-semibold text-zinc-900 dark:text-zinc-100">11.11.2026</span>
+                            <h4 class="text-sm font-bold text-zinc-900 dark:text-white">"Light in sight"</h4>
+                            <p class="text-xs text-zinc-700 dark:text-zinc-300">Erweiterte Werkzeuge und Menüs</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2-Spaltige Feature-Tabelle -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Spalte 1: Implementiert -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
+                            <h4 class="font-bold text-zinc-900 dark:text-white text-base">Released</h4>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 font-semibold">Ready</span>
+                        </div>
+                        <ul class="space-y-3.5 text-sm text-zinc-700 dark:text-zinc-300">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">✓</span><br><br>
+                                <span>Core App</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">✓</span><br><br>
+                                <span>IFCX (Alpha) als quelloffenes natives Dateiformat</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">✓</span><br><br>
+                                <span>Grundriss-Editor und 3D-Perspektive</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">✓</span><br><br>
+                                <span>Bais Werkzeuge wie <br>Wand-, Decken-, Stützen- Werkzeuge sowie<br> Raumstempel- und Textwerkzeug</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spalte 2: In Entwicklung / Offen -->
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pb-3 border-b border-zinc-100 dark:border-zinc-800">
+                            <h4 class="font-bold text-zinc-900 dark:text-white text-base">Development</h4>
+                            <!-- Helles Grau statt schwarz -->
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-zinc-400 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100 font-semibold">Roadmap</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-zinc-700 dark:text-zinc-300">
+                            
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-start mr-3">
+                                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-400 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">○</span>
+                                    <span>Weitere Bauteilwerkzeuge wie <br>Fenster-, Tür-, Fassade-, Dachwerkzeug</span>
+                                </div>
+                                <!-- Helles Grau statt schwarz -->
+                                <span class="text-xs font-mono text-zinc-900 dark:text-zinc-100 bg-zinc-300 dark:bg-zinc-700 px-2 py-0.5 rounded shrink-0 font-semibold">bald</span>
+                            </li>
+
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-start mr-3">
+                                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-400 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">○</span>
+                                    <span>Legacy IFC (2x3 und 4x3) <br>Import/Export Support</span>
+                                </div>
+                                <!-- Helles Grau statt schwarz -->
+                                <span class="text-xs font-mono text-zinc-900 dark:text-zinc-100 bg-zinc-300 dark:bg-zinc-700 px-2 py-0.5 rounded shrink-0 font-semibold">bald</span>
+                            </li>
+
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-start mr-3">
+                                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-400 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">○</span>
+                                    <span>Autodesk Drawing Exchange Format Support <br>Import/Export *dxf</span>
+                                </div>
+                                <!-- Helles Grau statt schwarz -->
+                                <span class="text-xs font-mono text-zinc-900 dark:text-zinc-100 bg-zinc-300 dark:bg-zinc-700 px-2 py-0.5 rounded shrink-0 font-semibold">bald</span>
+                            </li>
+
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-start mr-3">
+                                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-400 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">○</span>
+                                    <span>Revit 2026 File Import Support <br>*.rvt und *.rva Dateiunterstützung</span>
+                                </div>
+                                <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-2 py-0.5 rounded shrink-0">geplant</span>
+                            </li>
+
+                            <li class="flex items-center justify-between">
+                                <div class="flex items-start mr-3">
+                                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-400 flex items-center justify-center text-xs font-bold mr-3 mt-0.5">○</span>
+                                    <span>Archicad 7 - 30 File Import Support <br>*pln und *pla Dateiunterstützung</span>
+                                </div>
+                                <span class="text-xs font-mono text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-2 py-0.5 rounded shrink-0">geplant</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Community & Open Source Sektion -->
+        <section id="community" class="py-16 bg-zinc-900 text-white relative overflow-hidden rounded-3xl shadow-xl border border-zinc-800 px-6 sm:px-10 w-full">
+            <div class="text-center relative z-10 max-w-3xl mx-auto">
+                <h2 id="communityTitle" class="text-3xl font-extrabold mb-4">Die Open-Source-Software für Architekt:innen</h2>
+                <p id="communityDesc" class="text-zinc-300 max-w-2xl mx-auto mb-8 text-lg leading-relaxed">
+                    ArchiCraft ist ein freies, quelloffenes Projekt entwickelt von und für Menschen, die entwerfen oder planen wollen. Nutzerfeindliche Abo-Systeme und proprietäre Dateiformate haben hier keinen Platz, nutze die kostenlose Architektursoftware ArchiCraft noch heute!
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a id="communityIssueBtn" href="https://github.com/ArchiCraftApp/ArchiCraft/issues" target="_blank" rel="noopener noreferrer" class="bg-white text-zinc-900 hover:bg-zinc-200 font-bold px-6 py-3 rounded-lg shadow-md transition-colors">
+                        Mitwirken oder Bug melden
+                    </a>
+                    <a id="communityIdeaBtn" href="mailto:pleasedonotsueus@archicraft.app" target="_blank" rel="noopener noreferrer" class="bg-zinc-800 hover:bg-zinc-700 text-white font-bold px-6 py-3 rounded-lg border border-zinc-600 transition-colors">
+                        Sende uns deine Ideen
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     <!-- Footer -->
     <footer class="py-8 border-t border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm">
